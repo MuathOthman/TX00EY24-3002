@@ -1,0 +1,18 @@
+:root {
+  --color-1: #43c59e;
+  --color-2: #009ea3;
+  --color-3: #00507a;
+}
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+}

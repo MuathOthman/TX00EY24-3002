@@ -1,0 +1,48 @@
+.kortti {
+    position: relative;
+    margin: 20px;
+    width: 570px;
+    height: 329px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.kortti-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+}
+
+.kortti-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    color: #FFF;
+}
+
+
+.kortti-image img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    color: black;
+    opacity: 0.3;
+
+}
+
+.kortti-address,
+.kortti-postcode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.kortti-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
