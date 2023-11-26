@@ -1,0 +1,63 @@
+.side-panel{
+    margin-right: auto;
+    margin-left: auto;
+    height: 100vh;
+    flex-shrink: 0;
+    border: 2px solid #F8F9FE;
+    background: #FFF;
+}
+
+.divider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider {
+    width: 40px;
+    height: 2px;
+    border-radius: 18px;
+    margin: 13px 0;
+    background: #F8F9FE;
+
+}
+
+.menu{
+    width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    padding: 2px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-radius: 15px;
+    background: #F2F2F7;
+}
+
+.active {
+    display: flex;
+    padding-right: 13px;
+    padding-left: 13px;
+
+    align-items: center;
+    border-radius: 15px;
+    border: 1px solid #F2F2F7;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 0px rgba(50, 50, 71, 0.01), 0px 4px 4px 0px rgba(0, 0, 0, 0.08);
+
+    /* Additional styles for better user feedback */
+    transition: all 0.3s ease; /* Add smooth transition */
+}
+
+.active:hover {
+    /* Add hover effect for active link */
+    transform: translateY(-2px); /* Move the active link slightly up on hover */
+    box-shadow: 0px 6px 12px 0px rgba(50, 50, 71, 0.05), 0px 6px 6px 0px rgba(0, 0, 0, 0.12);
+}
+
+.active:focus {
+    /* Add focus effect for accessibility */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0px 0px 0px 3px rgba(0, 123, 255, 0.4); /* Add focus ring */
+}

@@ -1,0 +1,39 @@
+.menubar {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 2px solid #F8F9FE;
+    position: absolute;
+}
+
+.menubar-title{
+    color: #D0D1D2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    margin-bottom: 7px;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.vl {
+    border-left: 2px solid #F8F9FE;
+    height: 30px;
+    border-radius: 18px;
+}
+
+.menubar-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
