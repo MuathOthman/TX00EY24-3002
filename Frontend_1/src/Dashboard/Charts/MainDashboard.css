@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.parent-container {
+  position: relative;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px 27vw 1fr;
+  grid-template-columns: 100px 70vw 1fr 20px;
+  grid-auto-rows: minmax(100px, auto);
+  align-content: space-between;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+}
+
+.graphSection {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  overflow: visible;
+  height: 100%;
+  margin-left: 3vw;
+}
+
+.lower-box {
+  display: flex;
+  flex-direction: row;
+  grid-column: 2 / 2;
+  grid-row: 3 / 3;
+  margin-left: 3vw;
+  overflow: visible;
+}
+
+.notification-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-column: 3 / 4;
+  grid-row: 2 / 4;
+}
+
+.doughnut-graph {
+  width: 500px;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    grid-template-rows: 50px 270px 718px;
+    grid-template-columns: 0px 650px; /* Single column layout for smaller screens */
+    overflow: auto;
+  }
+
+  .graphSection {
+    grid-column: 2; /* Take the full width in smaller screens */
+    margin-left: 0; /* Remove margin for smaller screens */
+  }
+
+  .lower-box {
+    flex-direction: column;
+    grid-column: 2; /* Take the full width in smaller screens */
+    margin-left: 0; /* Remove margin for smaller screens */
+    margin-top: 10px; /* Adjust margin as needed */
+  }
+
+  .notification-area {
+    display: none;
+  }
+  .doughnut-graph {
+    width: 500px;
+    height: 100%;
+  }
+}

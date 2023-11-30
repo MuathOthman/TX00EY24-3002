@@ -20,10 +20,6 @@ const Property = () => {
             .catch(error => console.error('Error fetching data:', error));
     }, []);
 
-    if (apartments.length === 0) {
-        return <div><PopUpForm/></div>;
-    }
-
     return (
         <div className="Property">
             {apartments.map((apartment) => (

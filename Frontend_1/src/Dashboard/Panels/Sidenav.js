@@ -30,7 +30,7 @@ const Sidenav = () => {
                 <NavLink to={'/property'} activeClassName="active">
                     <Sideitems height="20px" width="auto"  image=<FiPieChart style={{color: '#D0D1D2', width: '14px', height: '14px', flexShrink: 0, paddingTop: '2px'}} /> />
                 </NavLink>
-                <NavLink to={'/property10'} activeClassName="active">
+                <NavLink to={'/settings'} activeClassName="active">
                     <Sideitems height="20px" width="auto" image=<FiClock style={{color: '#D0D1D2', width: '14px', height: '14px', flexShrink: 0, paddingTop: '2px'}} /> />
                 </NavLink>
                 <NavLink to={'/property1'} activeClassName="active">

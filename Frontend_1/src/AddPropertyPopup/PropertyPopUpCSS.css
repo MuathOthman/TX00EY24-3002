@@ -48,9 +48,9 @@ body.active-modal {
     right: 10px;
     padding: 5px 7px;
 }
-  
+
 .modal {
-    margin: auto; 
+    margin: auto;
 }
 .header {
     font-family: 'Quicksand', sans-serif;
@@ -58,7 +58,7 @@ body.active-modal {
     font-weight: bold;
     margin-bottom: 5px;
     color: #00507A;
-    grid-column: 1 / span 2; 
+    grid-column: 1 / span 2;
     grid-row: 1;
     text-align: left;
 }
@@ -86,7 +86,7 @@ body.active-modal {
     color: #8c8c8c;
     font-weight: bold;
     font-size: 13px;
-    margin-bottom: 4px; 
+    margin-bottom: 4px;
 }
 
 .textfield input {
@@ -105,7 +105,7 @@ body.active-modal {
 .fixed-text {
     font-family: 'Quicksand', sans-serif;
     display: block;
-    margin-top: 5px; 
+    margin-top: 5px;
 }
 
 .area-field {
@@ -127,7 +127,7 @@ body.active-modal {
 }
 .area-field label {
     display: block;
-    margin-bottom: 4px; 
+    margin-bottom: 4px;
     color: #8c8c8c;
     font-weight: bold;
     font-size: 13px;
@@ -149,7 +149,7 @@ body.active-modal {
 
 
 .save-button {
-    grid-column: 1 / span 2; 
+    grid-column: 1 / span 2;
     grid-row: 5;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
@@ -185,7 +185,7 @@ body.active-modal {
 }
 
 .checkbox-section {
-    grid-column: 1 / span 2; 
+    grid-column: 1 / span 2;
     grid-row: 4;
     text-align: center;
     margin-bottom:25px;
@@ -193,12 +193,12 @@ body.active-modal {
     font-family: 'Quicksand', sans-serif;
 }
 .checkbox-section input {
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 .checkbox-section input[type="checkbox"] {
     background-color: #d0d0d0;
     cursor: pointer;
-    transform: scale(1.8); 
+    transform: scale(1.8);
 }
 
 .checkbox-section label {

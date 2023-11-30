@@ -23,7 +23,7 @@ export function LoginButton({ label, onClick }) {
 export function FrontPageButton({ label }) {
     return (
         <button className="button-frontpage">
-            <FiCornerDownLeft className="icon" />
+            <FiCornerDownLeft className="icon"/>
             {label}
         </button>
     );

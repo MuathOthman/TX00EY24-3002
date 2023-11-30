@@ -1,7 +1,7 @@
 // DoughnutChartWithCustomCSS.jsx
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import Chart from 'chart.js/auto'; // Import Chart from 'chart.js/auto'
+import Chart from 'chart.js/auto';
 
 const data = {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],

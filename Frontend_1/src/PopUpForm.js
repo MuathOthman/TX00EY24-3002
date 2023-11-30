@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AddPropertyPopup//PropertyPopUpCSS.css';
+import './AddPropertyPopup/PropertyPopUpCSS.css';
 import Field from './AddPropertyPopup/Field';
 import { SaveButton } from './AddPropertyPopup/ButtonSave';
 import AreaField from './AddPropertyPopup/AreaField';
@@ -8,20 +8,47 @@ import { ButtonClose } from './AddPropertyPopup/ButtonClose';
 
 const PopUpForm = () => {
     const [modal, setModal] = useState(false);
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [zipcode, setZipcode] = useState('');
-    const [country, setCountry] = useState('');
-    const [area, setArea] = useState('');
-    const [totalInvestment, setTotalInvestment] = useState('');
-    const [monthlyRevenue, setMonthlyRevenue] = useState('');
-    const [image, setImage] = useState('');
     const [selectedUnit, setSelectedUnit] = useState('');
     const [selectedPropertyTypes, setSelectedPropertyTypes] = useState([]);
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
+    const [stateRegion, setStateRegion] = useState('');
+    const [zipcode, setZipcode] = useState('');
+    const [totalInvestment, setTotalInvestment] = useState('');
+    const [monthlyRevenue, setMonthlyRevenue] = useState('');
+    const [area, setArea] = useState('');
 
     const toggleModal = () => {
         setModal(!modal);
     };
+
+    const handleAddressChange = (data) => {
+        setAddress(data);
+    }
+
+    const handleCityChange = (data) => {
+        setCity(data);
+    }
+
+    const handleStateRegionChange = (data) => {
+        setStateRegion(data);
+    }
+
+    const handleZipcodeChange = (data) => {
+        setZipcode(data);
+    }
+
+    const handleTotalInvestmentChange = (data) => {
+        setTotalInvestment(data);
+    }
+
+    const handleMonthlyRevenueChange = (data) => {
+        setMonthlyRevenue(data);
+    }
+
+    const handleAreaChange = (data) => {
+        setArea(data);
+    }
 
     const handlePropertyTypeChange = (isChecked, propertyType) => {
         if (isChecked) {
@@ -36,29 +63,20 @@ const PopUpForm = () => {
     const handleSave = () => {
         // Add logic for saving the form data
         console.log('Form data saved!');
-        const formData = {
-            selectedUnit,
-            selectedPropertyTypes,
-        }
-        console.log(formData);
-        toggleModal();
-    };
-
-    const onSubmit = (e) => {
-        e.preventDefault();
-        const contactUsInformation = {
+        const propertyInformation = {
             address,
             city,
+            stateRegion,
             zipcode,
-            country,
-            area,
             totalInvestment,
             monthlyRevenue,
-            image,
+            area,
             submittedOn: new Date()
         };
-    }
+        console.log(propertyInformation);
 
+        toggleModal();
+    };
 
     return (
         <>
@@ -67,20 +85,21 @@ const PopUpForm = () => {
             </button>
             {modal && (
                 <div className="modal">
-                    <div className="overlay"></div>
+                    <div onClick={toggleModal} className="overlay"></div>
                     <div className="modal-content">
                         <h3 className='header'>ADD A NEW PROPERTY</h3>
                         <ButtonClose className="close-button" onClick={toggleModal}>
+                            Close
                         </ButtonClose>
                         <div className="textfield">
-                            <Field label="Enter Address" topLabel="Address" type="text" value={address}/>
-                            <Field label="Enter City" topLabel="City" type="text" value={city}/>
-                            <Field label="Enter State/Region" topLabel="State / Region" type="text" value={country}/>
+                            <Field label="Enter Address" topLabel="Address" type="text" value={address} onChange={handleAddressChange(address)}/>
+                            <Field label="Enter City" topLabel="City" type="text" value={city} onChange={handleCityChange(city)}/>
+                            <Field label="Enter State/Region" topLabel="State / Region" type="text" value={stateRegion} onChange={handleStateRegionChange(stateRegion)}/>
                         </div>
                         <div className="textfield-two">
-                            <Field label="12345" topLabel="Zipcode" type="text" value={zipcode}/>
-                            <Field label="Enter total Investment" topLabel="Total Investment" type="currency" value={totalInvestment}/>
-                            <Field label="Enter Monthly revenue" topLabel="Monthly revenue" type="currency" value={monthlyRevenue}/>
+                            <Field label="12345" topLabel="Zipcode" type="text" value={zipcode} onChange={handleZipcodeChange}/>
+                            <Field label="Enter total Investment" topLabel="Total Investment" type="currency" value={totalInvestment} onChange={handleTotalInvestmentChange}/>
+                            <Field label="Enter Monthly revenue" topLabel="Monthly revenue" type="currency" value={monthlyRevenue} onChange={handleMonthlyRevenueChange}/>
                         </div>
                         <AreaField
                             topLabel="Area (Select unit of measure)"

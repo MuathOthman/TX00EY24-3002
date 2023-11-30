@@ -8,6 +8,8 @@ import Property from "./Property/Property";
 import Single from "./Property/Single/Single";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signin from "./UserForm/Sign In/Signin";
+import SettingsUserProfile from "./SettingsUserProfile";
+import PopUpForm from "./PopUpForm";
 
 function Main() {
     const isSignedIn = !!localStorage.getItem('token');
@@ -32,6 +34,8 @@ function Main() {
                                 <Route path="/" element={<Dashboard />} />
                                 <Route path="/property" element={<Property />} />
                                 <Route path="/property/:id" element={<Single />} />
+                                <Route path="/settings" element={<SettingsUserProfile />} />
+                                <Route path="/add-property" element={<PopUpForm />} />
                             </Routes>
                         </div>
                     </div>

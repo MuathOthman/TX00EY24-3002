@@ -37,3 +37,26 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.profile {
+    position: absolute;
+    right: 10px; /* Adjust the value as needed for proper positioning */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Horizontally center the content */
+}
+
+.profile-image img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+    display: inline-block; /* Display first name and surname in the same line */
+    margin-left: 5px; /* Adjust the value for spacing */
+}

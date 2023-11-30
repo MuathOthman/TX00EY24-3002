@@ -4,9 +4,9 @@ export function SaveButton({ label, onClick }) {
 
     const handleClick = () => {
         if (onClick) {
-          onClick();
+            onClick();
         }
-      };
+    };
 
-      return <button className="save-button" onClick={handleClick}>{label}</button>;
-  }
+    return <button className="save-button" onClick={handleClick}>{label}</button>;
+}

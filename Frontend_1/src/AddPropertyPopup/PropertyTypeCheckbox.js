@@ -11,14 +11,14 @@ const PropertyTypeCheckbox = ({ label, onChange }) => {
   };
 
   return (
-    <label>
-      <input
-        type="checkbox"
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-      />
-      {label}
-    </label>
+      <label>
+        <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={handleCheckboxChange}
+        />
+        {label}
+      </label>
   );
 };
 
