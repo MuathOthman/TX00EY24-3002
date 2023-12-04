@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import './SettingsCSS.css';
 
-const ProfilePicture = () => {
+const ProfilePicture = ({fetchedImage}) => {
   const [image, setImage] = useState(null);
   const fileInputRef = useRef(null);
 
@@ -24,8 +24,8 @@ const ProfilePicture = () => {
   return (
     <div className="profile-picture-container">
       <div className="image-container">
-        {image ? (
-          <img src={image} alt="Profile" className="profile-image" />
+        {fetchedImage ? (
+          <img src={fetchedImage} alt="Profile" className="profile-image" />
         ) : (
           <div className="placeholder"></div>
         )}

@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signin from "./UserForm/Sign In/Signin";
 import SettingsUserProfile from "./SettingsUserProfile";
 import PopUpForm from "./PopUpForm";
+import Overall from "./Overall/Overall";
 
 function Main() {
     const isSignedIn = !!localStorage.getItem('token');
@@ -36,6 +37,7 @@ function Main() {
                                 <Route path="/property/:id" element={<Single />} />
                                 <Route path="/settings" element={<SettingsUserProfile />} />
                                 <Route path="/add-property" element={<PopUpForm />} />
+                                <Route path="/overall" element={<Overall/>} />
                             </Routes>
                         </div>
                     </div>

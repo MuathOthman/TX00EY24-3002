@@ -1,9 +1,9 @@
 import React from 'react';
-import { FiMenu, FiCommand, FiPieChart, FiClock, FiGlobe, FiLoader, FiMoon, FiLogOut } from "react-icons/fi";
+import { FiMenu, FiCommand, FiPieChart, FiClock, FiGlobe, FiLoader, FiMoon, FiLogOut, FiSettings } from "react-icons/fi";
 import './CSS/sidenav.css';
 import './CSS/items.css';
 import Sideitems from "./Sideitems";
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 const Sidenav = () => {
@@ -11,6 +11,8 @@ const Sidenav = () => {
         localStorage.removeItem('token');
         window.location.href = '/';
     }
+
+
     return (
         <div className="side-panel">
             <Sideitems image=<FiMenu style={{color: '#D0D1D2', width: '30px', height: '30px', flexShrink: 0, marginTop: '10px'}} /> />
@@ -30,7 +32,7 @@ const Sidenav = () => {
                 <NavLink to={'/property'} activeClassName="active">
                     <Sideitems height="20px" width="auto"  image=<FiPieChart style={{color: '#D0D1D2', width: '14px', height: '14px', flexShrink: 0, paddingTop: '2px'}} /> />
                 </NavLink>
-                <NavLink to={'/settings'} activeClassName="active">
+                <NavLink to={'/overall'} activeClassName="active">
                     <Sideitems height="20px" width="auto" image=<FiClock style={{color: '#D0D1D2', width: '14px', height: '14px', flexShrink: 0, paddingTop: '2px'}} /> />
                 </NavLink>
                 <NavLink to={'/property1'} activeClassName="active">
@@ -43,8 +45,10 @@ const Sidenav = () => {
             <div className="divider-container" style={{marginTop: '100%'}}>
                 <div className="divider"></div>
             </div>
+            <Link to={'/settings'}>
+                <Sideitems color="#F8F9FE" height="40px" width="40px" image=<FiSettings style={{color: '#D0D1D2', width: '14px', height: '14px', flexShrink: 0, paddingTop: '2px'}} />/>
+            </Link>
             <Sideitems pressed={handleLogout} color="#F8F9FE" height="40px" width="40px" />
-            <Sideitems color="#F8F9FE" height="40px" width="40px" />
         </div>
     );
 };

@@ -1,98 +1,49 @@
-import { ResponsiveLine } from '@nivo/line'
-import {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { ResponsiveLine } from '@nivo/line';
+import _ from 'lodash';
+import SiteName from "../../Sitename/SiteName";
 
-const data2 = [
-    {
-        "id": "revenue",
-        "data": [
-            {
-                "x": "january",
-                "y": 10
-            },
-            {
-                "x": "february",
-                "y": 20
-            },
-            {
-                "x": "march",
-                "y": 30
-            },
-            {
-                "x": "april",
-                "y": 40
-            },
-            {
-                "x": "may",
-                "y": 50
-            },
-            {
-                "x": "june",
-                "y": 60
-            },
-            {
-                "x": "july",
-                "y": 70
-            },
-            {
-                "x": "august",
-                "y": 80
-            },
-            {
-                "x": "september",
-                "y": 90
-            },
-            {
-                "x": "october",
-                "y": 100
-            },
-            {
-                "x": "november",
-                "y": 10
-            },
-            {
-                "x": "december",
-                "y": 30
-            }
-        ]
-    }
-]
-
-const Chartcomponent = () => {
-    const [chart1, setChart1] = useState([]);
+const ChartComponent = () => {
+    const [chartData, setChartData] = useState([]);
     const { id } = useParams();
     const token = localStorage.getItem('token');
 
-    const fetchData = async () => {
-        try {
-            // Replace this with your actual fetch call
-            const response = await fetch('YOUR_API_ENDPOINT');
-            const data = await response.json();
+    useEffect(() => {
+        fetch(`http://localhost:8003/api/chart1/`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const modifiedData = data.map(obj => {
+                    const { _id, userId, __v, ...rest } = obj;
+                    return rest;
+                });
 
-            // Manipulate and structure the fetched data as per your required format
-            const structuredData = [
-                {
-                    id: 'revenue',
-                    data: data.map((item, index) => ({
-                        x: item.month, // Assuming the fetched data has a 'month' property
-                        y: item.value, // Assuming the fetched data has a 'value' property
-                    })),
-                },
-            ];
-
-            setFetchedData(structuredData);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
-    };
-
-    fetchData();
+                const transformedData = modifiedData.map(obj => {
+                    return {
+                        id: "chart1", // Set your desired id
+                        color: "hsl(211, 70%, 50%)", // Set your desired color
+                        data: Object.keys(obj).map(key => ({
+                            "x": _.capitalize(key),
+                            "y": obj[key]
+                        }))
+                    };
+                });
+                setChartData(transformedData);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, [token]); // Ensure useEffect runs when token changes (if needed)
 
     return (
-        <div style={{ width: '1200px', height: '56vh' }}>
+        <div>
+        <div style={{ width: '1200px', height: '56vh', marginTop: '-54px'}}>
             <ResponsiveLine
-                data={data2}
+                data={chartData}
                 colors={"#00507A"}
                 enableSlices={false}
                 enableCrosshair={false}
@@ -122,7 +73,7 @@ const Chartcomponent = () => {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'count',
+                    legend: 'Count',
                     legendOffset: -40,
                     legendPosition: 'middle'
                 }}
@@ -130,10 +81,10 @@ const Chartcomponent = () => {
                 pointBorderWidth={2}
                 pointLabelYOffset={-12}
                 useMesh={true}
-
             />
+        </div>
         </div>
     );
 };
 
-export default Chartcomponent;
+export default ChartComponent;

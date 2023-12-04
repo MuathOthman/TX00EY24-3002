@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card/Card';
 import './CSS/property.css';
 import PopUpForm from "../PopUpForm";
+import SiteName from "../Sitename/SiteName";
 
 const Property = () => {
     const [apartments, setApartments] = useState([]);
@@ -21,10 +22,13 @@ const Property = () => {
     }, []);
 
     return (
+        <div>
+            <SiteName name="Property" />
         <div className="Property">
             {apartments.map((apartment) => (
                 <Card key={apartment.id} {...apartment} />
             ))}
+        </div>
         </div>
     );
 };

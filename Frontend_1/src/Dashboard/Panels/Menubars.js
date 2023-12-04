@@ -5,6 +5,7 @@ import Sideitems from "./Sideitems";
 import Menuitems from "./Menuitems";
 import { NavLink } from 'react-router-dom';
 import PopUpForm from "../../PopUpForm";
+import AccountSection from "./AccountSection";
 
 
 const Menubars = () => {
@@ -28,6 +29,7 @@ const Menubars = () => {
                     <Menuitems title={<FiPlus style={{ height: '22px', width: '22px' }} />} />
                     </NavLink>
                 </div>
+                <AccountSection />
             </div>
         </div>
     );

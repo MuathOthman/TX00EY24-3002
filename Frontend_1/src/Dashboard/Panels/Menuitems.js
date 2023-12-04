@@ -4,7 +4,7 @@ import './CSS/items.css';
 const Menuitems = (props) => {
     return (
         <ul className="menu-panel-button">
-            <li><a className={props.active} href="#" onClick={props.click}>{props.title}</a></li>
+            <li><a href="#" onClick={props.click}>{props.title}</a></li>
         </ul>
     );
 };

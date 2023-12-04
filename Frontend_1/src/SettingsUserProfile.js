@@ -21,6 +21,7 @@ const SettingsUserProfile = () => {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [phone, setPhone] = React.useState('');
+    const [image, setImage] = React.useState(null);
     const [oldPassword, setOldPassword] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
     const [confirmPassword, setConfirmPassword] = React.useState('');
@@ -36,6 +37,8 @@ const SettingsUserProfile = () => {
         setEmail(data.email);
         setPhone(data.phone);
         setPassword(data.password);
+        setImage(data.image)
+          console.log(data)
       })
       .catch(error => console.error('Error fetching data:', error));
     }, []);
@@ -44,7 +47,7 @@ const SettingsUserProfile = () => {
       <div className="content">
       </div>
       <div className="pfp">
-        <ProfilePicture />
+        <ProfilePicture fetchedImage={image}/>
         </div>
       <div className="user-content"></div>
       <div className="user-info">

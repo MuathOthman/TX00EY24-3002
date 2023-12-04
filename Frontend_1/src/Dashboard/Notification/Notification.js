@@ -1,11 +1,15 @@
 import "./NotificationCSS.css";
-import { FaRegSquareCheck } from "react-icons/fa6";
+import { FiX } from "react-icons/fi";
+
 const Notification = ({ title, message, onClose }) => {
+    const buttonClose = () => {
+        console.log("Button clicked");
+
+    }
   return (
-    <div className="notification-box">
-      <h2>{title}</h2>
-      <p>{message}</p>
-      <FaRegSquareCheck className="notification-read"/>
+    <div className="notification-box" onClick={buttonClose}>
+      <h2>Lorem Impsum</h2>
+        <p>Lorem imposum</p>
     </div>
   );
 };
