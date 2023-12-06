@@ -1,7 +1,0 @@
-.picturecontainer img{
-    width: 150vh;
-    height: 100%;
-    object-fit: fill;
-    object-position: center;
-    transition: all 0.3s ease-in-out;
-}
