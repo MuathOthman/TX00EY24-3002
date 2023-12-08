@@ -1,0 +1,64 @@
+.blur-to-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  transition: filter 1s ease-in-out;
+}
+
+.blurry-text {
+  font-size: 24px;
+  color: white;
+  transition: 0.5s ease;
+}
+
+.content {
+  height: 100vh;
+}
+
+.firstpage-content {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  color: white;
+  z-index: 1;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.firstSlideImage {
+  height: 350px;
+  width: auto;
+  margin-left: 150px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border-radius: 30px;
+  transition: 1s ease;
+}
+
+.parallax-bg {
+  height: 100vh;
+  width: 100vw;
+}
+
+@media screen and (max-width: 1575px) {
+  .welcome-content {
+    top: 25%;
+    left: 50%;
+    font-size: 5vw;
+  }
+  .firstpage-content {
+    flex-direction: column;
+  }
+  .firstSlideImage {
+    height: 45vh;
+    width: auto;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+}
