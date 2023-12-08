@@ -33,7 +33,7 @@ function Dashboard() {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [token]);
 
   const closeNotification = (notificationId) => {
     fetch(`/api/notifications/${notificationId}`, {

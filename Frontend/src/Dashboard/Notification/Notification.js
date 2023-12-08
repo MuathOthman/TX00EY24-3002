@@ -10,9 +10,7 @@ const Notification = ({ title, message, closeNotification, id }) => {
     <div className="notification-box">
       <h2>{title}</h2>
       <p>{message}</p>
-      <button className="close-button" onClick={handleDelete}>
-        Close
-      </button>
+      <FiX className="close-button" onClick={handleDelete} />
     </div>
   );
 };
