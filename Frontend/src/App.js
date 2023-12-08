@@ -15,6 +15,7 @@ import AddPropertyPopup from "./PropertyAdd/AddPropertyPopup";
 import "./Frontpage/Styles/FrontPage.css";
 import { FrontPage } from "./Frontpage/FrontPage";
 import Register from "../src/UserForm/Register/Register";
+import { NotFound } from "./NotFoundPage/NotFound";
 
 function Main() {
   const isSignedIn = !!localStorage.getItem("token");
@@ -60,6 +61,7 @@ function Main() {
         <Route path="/home" element={<FrontPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

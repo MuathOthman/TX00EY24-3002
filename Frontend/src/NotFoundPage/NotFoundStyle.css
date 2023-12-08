@@ -1,0 +1,11 @@
+.not-found {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, 25%);
+}
+
+.not-found-image {
+  width: 50%;
+  height: auto;
+}
