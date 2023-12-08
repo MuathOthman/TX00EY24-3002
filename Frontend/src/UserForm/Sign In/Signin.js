@@ -7,6 +7,7 @@ import "./img.png";
 import img from "./img.png";
 import axios from "axios"; // If using ES6 modules
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Signin() {
   const navigate = useNavigate();
@@ -57,16 +58,15 @@ function Signin() {
     <div className="container">
       <Image src={img} alt="Description of the image" />
       <div className="alaosa">
-        <FrontPageButton label="Front Page" />
+        <Link to="/home">
+          <FrontPageButton label="Front Page" />
+        </Link>
       </div>
       <div className="form-container">
         <h1 className="estatebrew">estatebrew</h1>
         <div class="account">
           <p>
-            Don't have an account?{" "}
-            <a href="#" onclick="signIn()">
-              Register
-            </a>
+            Don't have an account? <Link to="/register">Register</Link>
           </p>
         </div>
         <div className="form-fields">

@@ -1,15 +1,17 @@
 import "./NotificationCSS.css";
 import { FiX } from "react-icons/fi";
 
-const Notification = ({ title, message, onClose }) => {
-    const buttonClose = () => {
-        console.log("Button clicked");
-
-    }
+const Notification = ({ title, message, closeNotification, id }) => {
+  const handleDelete = () => {
+    closeNotification(id);
+  };
   return (
-    <div className="notification-box" onClick={buttonClose}>
-      <h2>Lorem Impsum</h2>
-        <p>Lorem imposum</p>
+    <div className="notification-box">
+      <div className="nofication-header">
+        <h2>{title}</h2>
+        <FiX className="notification-close" onClick={handleDelete} />
+      </div>
+      <p>{message}</p>
     </div>
   );
 };

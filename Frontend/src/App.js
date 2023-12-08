@@ -14,9 +14,10 @@ import Overall from "./Overall/Overall";
 import AddPropertyPopup from "./PropertyAdd/AddPropertyPopup";
 import "./Frontpage/Styles/FrontPage.css";
 import { FrontPage } from "./Frontpage/FrontPage";
+import Register from "../src/UserForm/Register/Register";
 
 function Main() {
-  const isSignedIn = !localStorage.getItem("token");
+  const isSignedIn = !!localStorage.getItem("token");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -57,6 +58,7 @@ function Main() {
       )}
       <Routes>
         <Route path="/home" element={<FrontPage />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />
       </Routes>
     </div>
