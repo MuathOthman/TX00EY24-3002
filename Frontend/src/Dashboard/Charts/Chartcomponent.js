@@ -10,7 +10,7 @@ const ChartComponent = () => {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        fetch(`http://localhost:8003/api/chart1/`, {
+        fetch(`/api/chart1/`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

@@ -9,7 +9,7 @@ const Property = () => {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        fetch('http://localhost:8003/api/property/', {
+        fetch('/api/property/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
