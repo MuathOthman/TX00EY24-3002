@@ -1,12 +1,12 @@
 .notification-box {
   margin-left: 15px;
-  justify-content: center;
+  justify-content: flex-start;
   display: flex;
-  height: 85px;
+  height: 12vh;
   width: 80%;
   padding: 1px 20px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
   border-radius: 20px;
   background: #fff;
@@ -14,15 +14,7 @@
     0px 8px 8px 0px rgba(50, 50, 71, 0.08);
   transition: all 0.3s ease-in-out;
   margin-bottom: 20px;
-}
-
-.nofication-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.notification-close {
+  position: relative;
 }
 
 .notification-box h2 {
@@ -38,7 +30,13 @@
   color: #000;
 }
 
-.notification-box:hover {
+.close-button {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  color: #43c59e;
   cursor: pointer;
-  background: #f5f5f5;
+  width: 3vw;
 }
