@@ -13,7 +13,7 @@ const SettingsUserProfile = () => {
 
   const decodedPayload = atob(encodedPayload);
   const payloadObject = JSON.parse(decodedPayload);
-  const userId = payloadObject.userID; // Replace 'userID' with the key name for the user ID in your token payload
+  const userId = payloadObject.userID;
 
   console.log(String(userId)); // Outputting the user ID
   const [name, setName] = React.useState("");

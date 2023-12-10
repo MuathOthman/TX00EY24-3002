@@ -12,6 +12,13 @@ const Single = () => {
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token");
+  const [data1, setData1] = useState(null);
+  const [data2, setData2] = useState(null);
+  const [data3, setData3] = useState(null);
+  const [data4, setData4] = useState(null);
+  const [data5, setData5] = useState(null);
+  const [data6, setData6] = useState(null);
+
 
   useEffect(() => {
     fetch(`/api/property/${id}`, {
@@ -22,7 +29,15 @@ const Single = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setProperty(data))
+      .then((data) => {
+        setProperty(data);
+        setData1(data.totalInvestment);
+        setData2(data.monthlyRevenue);
+        setData3(data.propertyType);
+        setData4(data.maintenance);
+        setData5(data.available);
+        setData6(data.location);
+      })
       .catch((error) => console.error("Error fetching data:", error));
   }, [id]);
   console.log(property);
@@ -36,7 +51,7 @@ const Single = () => {
         <Picturecontainer property={property} />
       </div>
       <div className="chartcontainer2">
-        <Minicard />
+        <Minicard data1={data1} data2={data2} data3={data3} data4={data4} data5={data5} data6={"Moi"}/>
       </div>
     </div>
   );

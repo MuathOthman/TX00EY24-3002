@@ -9,13 +9,11 @@ import Single from "./Property/Single/Single";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Signin from "./UserForm/Sign In/Signin";
 import SettingsUserProfile from "./SettingsUserProfile";
-import PopUpForm from "./PopUpForm";
 import Overall from "./Overall/Overall";
 import AddPropertyPopup from "./PropertyAdd/AddPropertyPopup";
 import "./Frontpage/Styles/FrontPage.css";
 import { FrontPage } from "./Frontpage/FrontPage";
 import Register from "../src/UserForm/Register/Register";
-import { NotFound } from "./NotFoundPage/NotFound";
 
 function Main() {
   const isSignedIn = !!localStorage.getItem("token");

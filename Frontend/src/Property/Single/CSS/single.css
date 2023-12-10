@@ -6,7 +6,7 @@
     width: 100%;
     height: 92.3vh;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-auto-rows: minmax(100px, auto);
 }

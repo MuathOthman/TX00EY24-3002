@@ -1,20 +1,45 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { ResponsivePie } from '@nivo/pie';
+import {useParams} from "react-router-dom";
 
-const data = [
-    {
-        "id": "Reserved",
-        "label": "Reserved",
-        "value": 212,
-    },
-    {
-        "id": "Free",
-        "label": "Free",
-        "value": 372,
-    }
-];
+
 
 const PieChart = () => {
+    const token = localStorage.getItem("token");
+    const [property, setProperty] = useState(null);
+    const [available, setAvailable] = useState(0);
+    const [reserved, setReserved] = useState(0);
+    const { id } = useParams();
+    useEffect(() => {
+        fetch(`/api/property/`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setProperty(data);
+                setAvailable(data.filter((property) => property.available === true).length);
+                setReserved(data.filter((property) => property.available === false).length);
+                console.log("Available " + available)
+                console.log("Reserved " + reserved)
+            })
+            .catch((error) => console.error("Error fetching data:", error));
+    }, []);
+    const data = [
+        {
+            "id": "Reserved",
+            "label": "Reserved",
+            "value": available,
+        },
+        {
+            "id": "Free",
+            "label": "Free",
+            "value": reserved
+        }
+    ];
     const customColorScheme = ['#00507A', '#009EA3', '#43C59E'];
     return (
         <div style={{ width: '600px', height: '42vh', marginTop: '-30px', marginLeft: "-30px" }}>
