@@ -1,0 +1,30 @@
+.data-card {
+    display: inline-flex;
+    width: 250px;
+    height: 157px;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #F2F2F7;
+    box-shadow: 0px 8px 16px 0px rgba(50, 50, 71, 0.06), 0px 8px 8px 0px rgba(50, 50, 71, 0.08);
+    margin: 20px;
+}
+
+.data-card-title {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.data-card-value {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    font-size: 30px;
+    color: #555;
+}

@@ -61,7 +61,6 @@ function Main() {
         <Route path="/home" element={<FrontPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -11,6 +11,10 @@ const PopupForm = ({ onClose }) => {
     totalInvestment: "",
     monthlyRevenue: "",
     area: "",
+    image: "",
+    available: false,
+    maintenance: false,
+    propertyType: "Residential",
   });
 
   const handleInputChange = (e) => {
@@ -23,6 +27,11 @@ const PopupForm = ({ onClose }) => {
         : value;
 
     setProperty({ ...property, [name]: newValue });
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setProperty({ ...property, [name]: checked });
   };
   const handleSave = () => {
     // Perform save action with property data
@@ -129,6 +138,36 @@ const PopupForm = ({ onClose }) => {
                   onChange={handleInputChange}
                 />
               </label>
+              <label>
+                Available:
+                <input
+                    type="checkbox"
+                    name="available"
+                    checked={property.available}
+                    onChange={handleCheckboxChange}
+                />
+              </label>
+              <label>
+                Maintenance:
+                <input
+                    type="checkbox"
+                    name="maintenance"
+                    checked={property.maintenance}
+                    onChange={handleCheckboxChange}
+                />
+              </label>
+              <label>
+                Property Type:
+                <select
+                  name="propertyType"
+                  value={property.propertyType}
+                  onChange={handleInputChange}
+                >
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Industrial">Industrial</option>
+                </select>
+                </label>
             </div>
           </div>
           <buttones type="button" onClick={handleSave}>
