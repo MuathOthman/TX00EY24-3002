@@ -228,6 +228,9 @@
     height: 100%;
     cursor: pointer;
     appearance: none;
+    background-color: transparent;
+    border: none;
+
   }
   
   .toggle label {
@@ -292,4 +295,8 @@
 .updt-btn{
   margin-top: 5px;
 }
- 
+
+.textfield input {
+  background-color: transparent;
+}
+
