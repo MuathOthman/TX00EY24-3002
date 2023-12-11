@@ -170,7 +170,7 @@ const PopupForm = ({ onClose }) => {
                 </label>
             </div>
           </div>
-          <buttones type="button" onClick={handleSave}>
+          <buttones className="bottom-save-button" type="button" onClick={handleSave}>
             Save
           </buttones>
         </form>

@@ -18,6 +18,8 @@
     max-width: 500px;
     width: 100%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    
+
 }
 
 .popup-content h2 {
@@ -25,15 +27,17 @@
     font-family: 'Arial', sans-serif;
     font-size: 24px;
     margin-bottom: 20px;
+    color: #00507A;
+    
 }
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 26px;
+    right: 34%;
     cursor: pointer;
-    font-size: 24px;
-    color: #555;
+    font-size: 43px;
+    color: #858585;
 }
 
 form {
@@ -48,7 +52,7 @@ label {
 }
 
 input {
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Quicksand', sans-serif;
     padding: 12px;
     width: 400px;
@@ -62,7 +66,8 @@ input {
 select {
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
-    padding: 12px;
+    margin-top: 6px;
+    padding: 7px;
     box-sizing: border-box;
     margin-bottom: 15px;
     border-radius: 8px;
@@ -85,12 +90,13 @@ buttones {
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    text-align: center;
+
 }
 
 buttones:hover {
-    background-color: #009EA3;
+    background-color: #0c6fb6;
 }
-/* Add this to your existing CSS or in a separate file */
 
 .form-row {
     display: flex;
@@ -106,8 +112,12 @@ buttones:hover {
     margin-bottom: 15px;
 }
 
+
 .form-column input {
-    width: calc(100% - 24px); /* Adjust the width as needed */
+    width: calc(100% - 24px); 
 }
 
+.bottom-part-popup-fields {
+    display: block;
+}
 
