@@ -31,6 +31,8 @@ function Main() {
     }
   }, [isSignedIn, location, navigate]);
 
+  const isSettingsPage = location.pathname === "/settings";
+
   return (
     <div className="App">
       {isSignedIn && (
@@ -47,7 +49,6 @@ function Main() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/property" element={<Property />} />
                 <Route path="/property/:id" element={<Single />} />
-                <Route path="/settings" element={<SettingsUserProfile />} />
                 <Route path="/add-property" element={<AddPropertyPopup />} />
                 <Route path="/overall" element={<Overall />} />
               </Routes>
@@ -59,6 +60,10 @@ function Main() {
         <Route path="/home" element={<FrontPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/signin" element={<Signin />} />
+        {isSettingsPage ? (
+            <Route path="/settings" element={<SettingsUserProfile />} />
+        ) : null}
       </Routes>
     </div>
   );
