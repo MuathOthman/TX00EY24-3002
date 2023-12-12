@@ -57,11 +57,11 @@ const SettingsUserProfile = () => {
         <Field label="" topLabel="Phone Number" type="tel" value={phone} />
       </div>
       <div className="toggles">
-        <Toggle text="Enable Notifications" />
+        <Toggle text="Email Notifications" />
         <Toggle text="Enable Notifications" />
         <Toggle text="Enable Notifications" />
         <div className="password">
-          <p className="forgot-text">Forgot password?</p>
+          <p className="forgot-text">Change your password</p>
           <Field
             className="pssw-forgot"
             label="Enter Old password"
