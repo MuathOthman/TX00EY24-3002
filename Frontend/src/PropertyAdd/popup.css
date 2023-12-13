@@ -31,9 +31,15 @@
     
 }
 
+.checkboxes-pop {
+    height: 25px; /* Adjust the height as needed */
+    margin-left: 5vh;
+    margin-top: -3vh;
+  }
+
 .close {
     position: absolute;
-    top: 26px;
+    top: 59px;
     right: 34%;
     cursor: pointer;
     font-size: 43px;
@@ -61,6 +67,7 @@ input {
     border-radius: 8px;
     border: 1px solid #ccc;
     transition: border-color 0.3s ease-in-out;
+    height: 35px;
 }
 
 select {

@@ -13,9 +13,12 @@ function Field({ label, icon, type = 'text', value, onChange }) {
     const iconComponent = iconComponents[icon] || null;
 
     return (
-        <div className="fields-container">
-            {iconComponent} {}
-            <input
+        <div className="fields-signin-container">
+            <div className='icon-signin-wrapper'>
+                {iconComponent} {}
+                </div>
+
+            <input className='user-field-signin'
                 type={type}
                 placeholder={label}
                 value={value}

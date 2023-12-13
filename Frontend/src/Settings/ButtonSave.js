@@ -9,5 +9,5 @@ export function SaveButton({ label, onClick }) {
         }
       };
 
-      return <button className="save-button" onClick={handleClick}>{label}</button>;
+      return <button className="save-button-settings-s" onClick={handleClick}>{label}</button>;
   }

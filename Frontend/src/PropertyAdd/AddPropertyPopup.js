@@ -139,7 +139,7 @@ const PopupForm = ({ onClose }) => {
         <form>
           <div className="form-row">
             <div className="form-column">
-              <label>
+              <label className="field-popup-field">
                 Address:
                 <input
                   type="text"
@@ -175,6 +175,18 @@ const PopupForm = ({ onClose }) => {
                   onChange={handleInputChange}
                 />
               </label>
+              <label>
+                Property Type:
+                <select
+                  name="propertyType"
+                  value={property.propertyType}
+                  onChange={handleInputChange}
+                >
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Industrial">Industrial</option>
+                </select>
+                </label>
             </div>
             <div className="form-column">
               <label>
@@ -215,7 +227,7 @@ const PopupForm = ({ onClose }) => {
               </label>
               <label>
                 Available:
-                <input
+                <input className="checkboxes-pop"
                     type="checkbox"
                     name="available"
                     checked={property.available}
@@ -224,25 +236,13 @@ const PopupForm = ({ onClose }) => {
               </label>
               <label>
                 Maintenance:
-                <input
+                <input className="checkboxes-pop"
                     type="checkbox"
                     name="maintenance"
                     checked={property.maintenance}
                     onChange={handleCheckboxChange}
                 />
               </label>
-              <label>
-                Property Type:
-                <select
-                  name="propertyType"
-                  value={property.propertyType}
-                  onChange={handleInputChange}
-                >
-                  <option value="Residential">Residential</option>
-                  <option value="Commercial">Commercial</option>
-                  <option value="Industrial">Industrial</option>
-                </select>
-                </label>
             </div>
           </div>
           <buttones className="bottom-save-button" type="button" onClick={handleSave}>
