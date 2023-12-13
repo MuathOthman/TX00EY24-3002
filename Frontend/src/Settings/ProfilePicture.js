@@ -31,7 +31,7 @@ const ProfilePicture = ({fetchedImage}) => {
         )}
       </div>
       <div className="file-input-wrapper">
-        <button type="button" onClick={handleButtonClick}>
+        <button className="pfp-box-border" type="button" onClick={handleButtonClick}>
           Choose Profile Picture
         </button>
         <span className="file-name">{image ? 'File chosen' : 'No file chosen'}</span>

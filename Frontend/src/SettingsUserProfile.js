@@ -58,8 +58,8 @@ const SettingsUserProfile = () => {
       </div>
       <div className="toggles">
         <Toggle text="Email Notifications" />
-        <Toggle text="Enable Notifications" />
-        <Toggle text="Enable Notifications" />
+        <Toggle text="Dark Mode" />
+        <Toggle text="Allow Data Sharing" />
         <div className="password">
           <p className="forgot-text">Change your password</p>
           <Field
@@ -83,7 +83,7 @@ const SettingsUserProfile = () => {
           <SaveButton label="UPDATE PASSWORD" />
         </div>
       </div>
-      <div className="save-changes-btn">
+      <div className="save-changes-btn-settings">
         <SaveButton label="UPDATE CHANGES" />
       </div>
     </div>

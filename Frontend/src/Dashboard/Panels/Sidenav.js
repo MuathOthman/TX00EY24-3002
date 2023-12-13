@@ -15,7 +15,7 @@ const Sidenav = () => {
 
     return (
         <div className="side-panel">
-            <Sideitems image=<FiMenu style={{color: '#D0D1D2', width: '30px', height: '30px', flexShrink: 0, marginTop: '10px'}} /> />
+            <Sideitems image=<FiMenu style={{color: '#D0D1D2', width: '30px', height: '30px', flexShrink: 0, marginTop: '12px', marginLeft: '22px',}} /> />
                 <div className="divider-container" style={{ marginTop: '5px', marginBottom: '10px'}}>
                 <div className="divider"></div>
             </div>
@@ -46,9 +46,9 @@ const Sidenav = () => {
                 <div className="divider"></div>
             </div>
             <Link to={'/settings'}>
-                <Sideitems color="#F8F9FE" height="40px" width="40px" image=<FiSettings style={{color: '#D0D1D2', width: '14px', height: '14px', flexShrink: 0, paddingTop: '2px'}} />/>
+                <Sideitems color="#F8F9FE" height="40px" width="40px" image=<FiSettings style={{color: '#D0D1D2', width: '18px', height: '14px', flexShrink: 0, paddingTop: '2px', marginLeft: '10px',}} />/>
             </Link>
-            <Sideitems pressed={handleLogout} color="#F8F9FE" height="40px" width="40px" />
+            <Sideitems pressed={handleLogout} color="#F8F9FE" height="40px" width="40px" image=<FiLogOut style={{color: '#D0D1D2', width: '18px', height: '14px', flexShrink: 0, paddingTop: '2px', marginLeft: '10px',}} />/>
         </div>
     );
 };
