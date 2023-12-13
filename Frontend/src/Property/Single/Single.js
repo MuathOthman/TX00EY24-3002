@@ -6,6 +6,7 @@ import Minicard from "./Minicard/Minicard";
 import { useParams } from "react-router-dom";
 import { apartments } from "../../DATATESTING/data";
 
+
 const Single = () => {
   const { id } = useParams();
   console.log("Single" + id);
@@ -37,6 +38,7 @@ const Single = () => {
         setData4(data.maintenance);
         setData5(data.available);
         setData6(data.location);
+        setData6(data.area);
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, [id]);
@@ -51,7 +53,7 @@ const Single = () => {
         <Picturecontainer property={property} />
       </div>
       <div className="chartcontainer2">
-        <Minicard data1={data1} data2={data2} data3={data3} data4={data4} data5={data5} data6={"Moi"}/>
+        <Minicard data1={data1} data2={data2} data3={data3} data4={data4} data5={data5} data6={data6}/>
       </div>
     </div>
   );

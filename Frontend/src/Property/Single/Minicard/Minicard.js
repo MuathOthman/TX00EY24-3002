@@ -25,8 +25,8 @@ const Minicard = ({data1, data2, data3, data4, data5, data6}) => {
                 <p className="data-card-value">{String(data5)}</p>
             </div>
             <div className="minicard6">
-                <h4 className="data-card-title">Something</h4>
-                <p className="data-card-value">{data6}</p>
+                <h4 className="data-card-title">Area</h4>
+                <p className="data-card-value">{data6} m²</p>
             </div>
         </div>
     );

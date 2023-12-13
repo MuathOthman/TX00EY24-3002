@@ -39,7 +39,6 @@ function Register() {
                 console.log(data);
 
                 if (response.ok) {
-
                     navigate("/Dashboard");
                 }
             };

@@ -51,6 +51,7 @@ function Main() {
                 <Route path="/property/:id" element={<Single />} />
                 <Route path="/add-property" element={<AddPropertyPopup />} />
                 <Route path="/overall" element={<Overall />} />
+                <Route path="/settings" element={<SettingsUserProfile />} />
               </Routes>
             </div>
           </div>
@@ -61,9 +62,6 @@ function Main() {
         <Route path="/register" element={<Register />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signin" element={<Signin />} />
-        {isSettingsPage ? (
-            <Route path="/settings" element={<SettingsUserProfile />} />
-        ) : null}
       </Routes>
     </div>
   );

@@ -1,11 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/card.css';
-import image3 from "../../DATATESTING/1.jpg";
+import { FiTrash, FiStar } from "react-icons/fi";
 
 
 const Card = ({ _id, address, city, zipcode, image }) => {
     const navigate = useNavigate(); // useNavigate called directly in the component body
+
+
 
     const handleCardClick = () => {
         navigate(`/property/${_id}`);

@@ -1,4 +1,4 @@
-const data = [
+let data = [
     {
         id: 'japan',
         color: 'hsl(169, 70%, 50%)',

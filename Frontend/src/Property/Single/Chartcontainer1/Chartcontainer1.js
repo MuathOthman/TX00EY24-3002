@@ -4,6 +4,8 @@ import Card from "../../../Dashboard/CardDashboard/Card";
 import Box from "./Box/Box";
 import {useParams} from "react-router-dom";
 import {apartments} from '../../../DATATESTING/data';
+import { FiTrash, FiStar } from "react-icons/fi";
+
 
 
 const Chartcontainer1 = ({property}) => {

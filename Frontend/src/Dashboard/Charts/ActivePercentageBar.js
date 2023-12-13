@@ -8,35 +8,17 @@ import { ResponsiveRadar } from '@nivo/radar'
 
 const data = [
   {
-    "taste": "DATE1",
+    "taste": "Residential",
     "chardonay": 35,
-    "carmenere": 41,
-    "syrah": 59
-  },
-  {
-    "taste": "Date2",
-    "chardonay": 67,
-    "carmenere": 41,
-    "syrah": 92
-  },
-  {
-    "taste": "Date3",
+    "carmenere": 54,
+    "syrah": 25
+    },
+{
+    "taste": "Commercial",
     "chardonay": 35,
-    "carmenere": 72,
-    "syrah": 27
-  },
-  {
-    "taste": "Date4",
-    "chardonay": 21,
-    "carmenere": 87,
-    "syrah": 99
-  },
-  {
-    "taste": "Date5",
-    "chardonay": 104,
-    "carmenere": 84,
-    "syrah": 95
-  }
+    "carmenere": 54,
+    "syrah": 25
+    },
 ]
 const MyResponsiveRadar = () => (
     <div style={{ width: '600px', height: '39vh', marginTop: '-70px', marginLeft: "-30px" }}>
