@@ -74,11 +74,11 @@ function Dashboard() {
             )}
           </div>
           <div className="minicardcontainer">
-            <SiteName name="Chart2" />
+            <SiteName name="Occupied" />
             <PieChart />
           </div>
           <div className="cardcontainer">
-            <SiteName name="Chart3" />
+            <SiteName name="Type" />
             <MyResponsiveRadar />
           </div>
         </div>

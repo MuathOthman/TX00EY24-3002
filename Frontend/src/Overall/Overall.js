@@ -16,6 +16,8 @@ const Overall = () => {
     const [commercial, setCommercial] = React.useState(0);
     const [industrial, setIndustrial] = React.useState(0);
     const [location, setLocation] = React.useState(0);
+    const [topInvestment, setTopInvestment] = React.useState(0);
+    const [maintenanceCosts, setMaintenanceCosts] = React.useState(0);
     useEffect(() => {
         fetch(`/api/property/`, {
             method: "GET",
@@ -38,6 +40,9 @@ const Overall = () => {
                 setResidential(data.filter((property) => property.propertyType === "Residential").length);
                 setCommercial(data.filter((property) => property.propertyType === "Commercial").length);
                 setIndustrial(data.filter((property) => property.propertyType === "Industrial").length);
+                setTopInvestment(data.reduce((max, property) => property.totalInvestment > max ? property.totalInvestment : max, data[0].totalInvestment));
+                setMaintenanceCosts(data.reduce((total, property) => total + property.totalInvestment,0));
+                setLocation( data.country);
 
 
             })
@@ -57,9 +62,9 @@ const Overall = () => {
             <DataCards title={"Residential properties"} value={residential}/>
             <DataCards title={"Commercial properties"} value={commercial}/>
             <DataCards title={"Industrial properties"} value={industrial}/>
-            <DataCards title={"Property Locations"} value={location}/>
-            <DataCards title={"Test"} value={"orpe"}/>
-            <DataCards title={"Test"} value={"orpe"}/>
+            <DataCards title={"Top Country"} value={"Finland"}/>
+            <DataCards title={"Top investment"} value={topInvestment + "€"}/>
+            <DataCards title={"Maintenance costs"} value={maintenanceCosts/1000 + "€"}/>
         </div>
 
     );

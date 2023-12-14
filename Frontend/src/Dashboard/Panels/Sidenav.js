@@ -19,7 +19,7 @@ const Sidenav = () => {
                 <div className="divider-container" style={{ marginTop: '5px', marginBottom: '10px'}}>
                 <div className="divider"></div>
             </div>
-            <Sideitems color="#43C59E" height="40px" width="40px" />
+            <Sideitems color="#43C59E" height="40px" width="40px"/>
             <Sideitems color="#3D7068" height="40px" width="40px"/>
             <Sideitems color="#14453D" height="40px" width="40px"/>
             <div className="divider-container">

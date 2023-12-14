@@ -1,11 +1,4 @@
-.side-panel{
-    margin-right: auto;
-    margin-left: auto;
-    height: 100vh;
-    flex-shrink: 0;
-    border: 2px solid #F8F9FE;
-    background: #FFF;
-}
+
 
 .divider-container {
     display: flex;

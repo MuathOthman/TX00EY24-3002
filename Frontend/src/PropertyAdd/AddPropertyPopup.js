@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./popup.css";
-import { useHistory } from "react-router-dom";
-const PopupForm = ({ onClose }) => {
+import {useHistory, useNavigate} from "react-router-dom";
+const PopupForm = ({  }) => {
   const token = localStorage.getItem("token");
   const [property, setProperty] = useState({
     address: "",
@@ -17,6 +17,11 @@ const PopupForm = ({ onClose }) => {
     propertyType: "Residential",
   });
   const [revenuedata, setRevenueData] = useState();
+  const navigate = useNavigate();
+
+  const onClose = () => {
+    navigate("/property");
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -61,12 +66,8 @@ const PopupForm = ({ onClose }) => {
     })
         .then(response => response.json())
         .then(data => {
-          console.log(data);
-          const modifiedData = data.map(obj => {
-            const {_id, userId, __v, ...rest} = obj;
-            return setRevenueData(rest);
-          });
-        })
+            setRevenueData(data[0]);
+      console.log("Success:", data);
 
     fetch("/api/chart1", {
       method: "PATCH",
@@ -86,7 +87,7 @@ const PopupForm = ({ onClose }) => {
         september: 0,
         october: 0,
         november: 0,
-        december: property.monthlyRevenue +  revenuedata.december,
+        december: 5000
       }),
     })
         .then((response) => response.json())
@@ -125,9 +126,15 @@ const PopupForm = ({ onClose }) => {
           })
           .catch((error) => {
             console.error("Error:", error);
-          });
-    }
-  };
+            }
+            )}
+        }
+        )
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    navigate("/property")
+    };
 
   return (
     <div className="popup">
@@ -252,6 +259,6 @@ const PopupForm = ({ onClose }) => {
       </div>
     </div>
   );
-};
+}
 
 export default PopupForm;
